@@ -9,6 +9,8 @@ p = re.compile(RESULT_RX, re.MULTILINE)
 while True:
 	try:
 		l = s.readline().decode()
+    except KeyboardInterrupt:
+        break
 	except:
 		continue
 	matches = p.findall(l)
