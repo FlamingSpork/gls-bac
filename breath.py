@@ -19,10 +19,10 @@ def process_line(serial_conn: serial.Serial):
     l_ = serial_conn.readline()
     if l_:
         l = l_.decode()
-    matches = p.findall(l)
-    if len(matches) > 0:
-        print("got BAC:", matches[0])
-        bacReport(float(matches[0]))
+        matches = p.findall(l)
+        if len(matches) > 0:
+            print("got BAC:", matches[0])
+            bacReport(float(matches[0]))
 
 
 if __name__ == "__main__":
