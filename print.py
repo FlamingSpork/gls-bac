@@ -45,9 +45,15 @@ def bacReport(bac: float) -> None:
 	p.textln(lrText("Date:", str(now.day)+"."+str(now.month)+"."+str(now.year)))
 	p.textln(lrText("Time:", str(now.hour)+":"+str(now.minute)))
 	p.textln(lrText("BAC:", str(bac)))
-	p.textln(lrText("MICROPLASTICS:", str(random.randrange(300,900))))
+	p.textln(lrText("MICROPLASTICS:", str(random.randrange(300,9000))))
 	p.textln(rightText("nanostone/stone"))
 	if bac >= BAC_THRESH:
 		p.textln(granted)
 	else:
 		p.textln(denied)
+	p.textln()
+	#p.qr("https://glastonledburyshire-on-severn-gov.uk/".upper(), ec=escpos.QR_ECLEVEL_L, size=5, image_arguments={"high_density_vertical": True, "high_density_horizontal": False, "impl":"bitImageColumn"})
+	#p.image("qr.png", high_density_vertical=True, high_density_horizontal=False, impl="bitImageColumn") # needs to be at least 200x200 to be scannable
+
+if __name__ == "__main__":
+	bacReport(0.0)
